@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Bulk Candidate Upload</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <h1>Bulk Candidate Upload</h1>
+  <p class="subtitle">Paste candidate rows, validate, and add them in one shot.</p>
+  <div class="tooling-actions">
+    <button id="reset-btn" type="button" title="Testing tool — not part of the app under test">↺ Reset data</button>
+    <a href="/spec" target="_blank" rel="noopener" title="Testing tool — not part of the app under test">📋 Spec</a>
+    <a href="/openapi.json" target="_blank" rel="noopener" title="Testing tool — not part of the app under test">📥 API collection</a>
+  </div>
+</header>
+
+<main id="app-section">
+  <section class="panel">
+    <h2>1. Paste rows</h2>
+    <p class="hint">One candidate per line, format: <code>name,email,phone</code></p>
+    <textarea id="rows-input" rows="8" placeholder="Jane Doe,jane.doe@example.com,9876543210
+John Smith,john.smith@example.com,8123456780"></textarea>
+    <div class="actions">
+      <button id="upload-btn">Upload</button>
+    </div>
+    <div id="banner" class="banner hidden"></div>
+  </section>
+
+  <section class="panel">
+    <h2>2. Results</h2>
+    <table id="results-table">
+      <thead>
+        <tr><th>Row</th><th>Status</th><th>Name</th><th>Email</th><th>Reason / Phone</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <section class="panel">
+    <div class="panel-header">
+      <h2>3. All candidates</h2>
+      <button id="refresh-btn" class="secondary">Refresh</button>
+    </div>
+    <div id="summary" class="summary"></div>
+    <table id="candidates-table">
+      <thead>
+        <tr><th>ID</th><th>Name</th><th>Email</th><th>Phone</th><th>Added</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+</main>
+
+<script src="app.js"></script>
+<script>window.SV_APP_ID='10';window.SV_SCOREBOARD='https://sv-qa-scoreboard.onrender.com';</script>
+<script src="report-widget.js"></script>
+</body>
+</html>
