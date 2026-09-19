@@ -73,6 +73,5 @@ The tests are designed against the expected application behavior and are verifie
 │   └── style.css
 
 └── tests/
-
-&#x20;   └── phase2-bugs.spec.js
+      └── phase2-bugs.spec.js
 
